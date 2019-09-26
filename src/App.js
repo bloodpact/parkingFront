@@ -1,25 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import "materialize-css/dist/css/materialize.min.css";
+import M from "materialize-css/dist/js/materialize.min";
+import Parallax from "./components/layout/Parallax";
+import Header from "./components/layout/Header";
+import Navbar from "./components/layout/Navbar";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import News from "./components/news/News";
+import Documents from "./components/documents/Documents";
+import About from "./components/About";
+import Meetings from "./components/Meetings";
+import Rates from "./components/Rates";
+import Footer from "./components/Footer";
+import back1 from "./img/back1.jpg";
+import back2 from "./img/back2.jpg";
+import "./App.css";
 
 function App() {
+  useEffect(() => {
+    M.AutoInit();
+  });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header />
+      <Parallax backImg={back1} />
+      <Navbar />
+      <Switch>
+        <Route exact path="/" component={About} />
+        <Route exact path="/rates" component={Rates} />
+        <Route exact path="/documents" component={Documents} />} />
+        <Route exact path="/news" component={News} />} />
+        <Route exact path="/meetings" component={Meetings} />} />
+      </Switch>
+      <Parallax backImg={back2} />
+      <Footer />
+    </Router>
   );
 }
 
