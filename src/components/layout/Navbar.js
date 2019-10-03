@@ -5,14 +5,14 @@ const Navbar = () => {
     <div>
       <nav>
         <div className="nav-wrapper blue lighten-1 ">
-          <a href="#" data-target="mobile-demo" className="sidenav-trigger">
+          <a href="#!" data-target="mobile-demo" className="sidenav-trigger">
             <i className="material-icons">menu</i>
           </a>
 
           <ul id="nav-mobile" className="left hide-on-med-and-down">
             <li>
               <NavLink to="/" activeClassName="active">
-                О компании
+                О кооперативе
               </NavLink>
             </li>
             <li>

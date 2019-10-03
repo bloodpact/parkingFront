@@ -1,15 +1,11 @@
 import React from "react";
 
-const NewsItem = ({ news }) => {
+const NewsItem = ({ news: { title, article, date } }) => {
   return (
     <li className="collection-item">
-      <h4>Новость 1</h4>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto
-        atque eos eum minima quibusdam! Blanditiis laudantium perspiciatis
-        ratione unde veniam.
-      </p>
-      <span className={"right"}> 11.12.2019</span>
+      <h4>{title}</h4>
+      <p>{article}</p>
+      <p> {date}</p>
     </li>
   );
 };
