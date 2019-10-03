@@ -10,7 +10,7 @@ import Documents from "./components/documents/Documents";
 import About from "./components/about/About";
 import Meetings from "./components/Meetings";
 import Rates from "./components/Rates";
-import Footer from "./components/Footer";
+import Footer from "./components/layout/Footer";
 import back1 from "./img/back1.jpg";
 import back2 from "./img/back2.jpg";
 import { Provider } from "react-redux";
