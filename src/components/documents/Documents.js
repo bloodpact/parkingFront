@@ -7,6 +7,7 @@ import { getDocs } from "../../actions/docActions";
 const Documents = ({ docs: { docs, loading }, getDocs }) => {
   useEffect(() => {
     getDocs();
+    //eslint-disable-next-line
   }, []);
   if (loading || docs === null) {
     return <Preloader />;
@@ -15,8 +16,13 @@ const Documents = ({ docs: { docs, loading }, getDocs }) => {
     <div className="section white">
       <div className="row container">
         <h1 className="header">Документы</h1>
+        {console.log(docs)}
         {docs.map(doc => (
-          <DocumentItem name={doc.name} link={doc.link} />
+          <DocumentItem
+            key={doc.parent.id}
+            name={doc.parent.name}
+            childArray={doc.child.data.files}
+          />
         ))}
       </div>
     </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { getCurrentPage } from "../actions/newsActions";
+import { getCurrentPage } from "../../actions/newsActions";
 
 const Pagination = ({ perPage, totalNews, curPage, getCurrentPage }) => {
   const pageNumbers = [];

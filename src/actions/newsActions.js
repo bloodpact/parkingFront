@@ -4,7 +4,6 @@ export const getNews = () => async dispatch => {
     setLoading();
     const res = await fetch("/news");
     const data = await res.json();
-    console.log(data);
     dispatch({
       type: GET_NEWS,
       payload: data
