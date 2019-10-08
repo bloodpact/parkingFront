@@ -3,11 +3,17 @@ import { connect } from "react-redux";
 import DocumentItem from "./DocumentItem";
 import Preloader from "../layout/Preloader";
 import { getDocs } from "../../actions/docActions";
+import M from "materialize-css/dist/js/materialize.min";
 
 const Documents = ({ docs: { docs, loading }, getDocs }) => {
   useEffect(() => {
+    M.AutoInit();
     getDocs();
+    //eslint-disable-next-line
   }, []);
+  useEffect(() => {
+    M.AutoInit();
+  });
   if (loading || docs === null) {
     return <Preloader />;
   }
@@ -15,9 +21,16 @@ const Documents = ({ docs: { docs, loading }, getDocs }) => {
     <div className="section white">
       <div className="row container">
         <h1 className="header">Документы</h1>
-        {docs.map(doc => (
-          <DocumentItem name={doc.name} link={doc.link} />
-        ))}
+
+        <ul className="collapsible popout">
+          {docs.map(doc => (
+            <DocumentItem
+              key={doc.parent.id}
+              name={doc.parent.name}
+              childArray={doc.child.data.files}
+            />
+          ))}
+        </ul>
       </div>
     </div>
   );

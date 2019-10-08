@@ -2,9 +2,8 @@ import { GET_NEWS, NEWS_ERROR, SET_LOADING, GET_CURRENT_PAGE } from "./types";
 export const getNews = () => async dispatch => {
   try {
     setLoading();
-    const res = await fetch("/news");
+    const res = await fetch("https://fierce-bastion-22580.herokuapp.com/news");
     const data = await res.json();
-    console.log(data);
     dispatch({
       type: GET_NEWS,
       payload: data
