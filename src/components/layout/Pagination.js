@@ -26,7 +26,13 @@ const Pagination = ({ perPage, totalNews, curPage, getCurrentPage }) => {
       </li>
       {pageNumbers.map(number => (
         <li key={number} className={"waves-effect"}>
-          <a href="#!" onClick={() => getCurrentPage(number)}>
+          <a
+            href="#!"
+            onClick={() => {
+              window.scrollTo(0, 0);
+              getCurrentPage(number);
+            }}
+          >
             {number}
           </a>
         </li>
