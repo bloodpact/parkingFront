@@ -3,13 +3,13 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
   return (
     <div>
-      <nav>
-        <div className="nav-wrapper blue lighten-1 ">
+      <nav className={"blue lighten-1"}>
+        <div className="nav-wrapper container blue lighten-1 ">
           <a href="#!" data-target="mobile-demo" className="sidenav-trigger">
             <i className="material-icons">menu</i>
           </a>
 
-          <ul id="nav-mobile" className="left hide-on-med-and-down">
+          <ul id="nav-mobile" className="center hide-on-med-and-down">
             <li>
               <NavLink to="/" activeClassName="active">
                 О кооперативе
@@ -24,10 +24,8 @@ const Navbar = () => {
             <li>
               <NavLink to="/news">Новости</NavLink>
             </li>
-            <li>
-              <NavLink to="/meetings">О собраниях</NavLink>
-            </li>
           </ul>
+
           <ul className="sidenav" id="mobile-demo">
             <li>
               <NavLink to="/" activeClassName="active">

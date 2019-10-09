@@ -8,7 +8,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import News from "./components/news/News";
 import Documents from "./components/documents/Documents";
 import About from "./components/about/About";
-import Meetings from "./components/Meetings";
 import Rates from "./components/Rates";
 import Footer from "./components/layout/Footer";
 import back1 from "./img/i1.jpg";
@@ -32,7 +31,6 @@ function App() {
           <Route exact path="/rates" component={Rates} />
           <Route exact path="/documents" component={Documents} />} />
           <Route exact path="/news" component={News} />} />
-          <Route exact path="/meetings" component={Meetings} />} />
         </Switch>
         <Parallax backImg={back2} />
         <Footer />

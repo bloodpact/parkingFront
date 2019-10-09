@@ -3,17 +3,25 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { getCurrentPage } from "../../actions/newsActions";
 
-const Pagination = ({ perPage, totalNews, curPage, getCurrentPage }) => {
+const Pagination = ({
+  perPage,
+  totalNews,
+  curPage,
+  getCurrentPage,
+  handleClick
+}) => {
   const pageNumbers = [];
   for (let i = 1; i <= Math.ceil(totalNews.length / perPage); i++) {
     pageNumbers.push(i);
   }
+
   return (
     <ul className="pagination">
       <li className={curPage === 1 ? "disabled" : "waves-effect"}>
         <a
           href="#!"
           onClick={() => {
+            handleClick();
             if (curPage === 1) {
               return getCurrentPage(curPage);
             } else {
@@ -29,7 +37,7 @@ const Pagination = ({ perPage, totalNews, curPage, getCurrentPage }) => {
           <a
             href="#!"
             onClick={() => {
-              window.scrollTo(0, 0);
+              handleClick();
               getCurrentPage(number);
             }}
           >
@@ -43,6 +51,7 @@ const Pagination = ({ perPage, totalNews, curPage, getCurrentPage }) => {
         <a
           href="#!"
           onClick={() => {
+            handleClick();
             if (curPage === pageNumbers.length) {
               return getCurrentPage(curPage);
             } else {
