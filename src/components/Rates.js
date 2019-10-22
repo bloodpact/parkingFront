@@ -15,6 +15,7 @@ const Rates = ({ rates: { rates }, getRates, loading }) => {
   if (loading || rates === null) {
     return <div>Loading</div>;
   }
+
   return (
     <div className="section white">
       <div className="row container">
@@ -50,7 +51,7 @@ const Rates = ({ rates: { rates }, getRates, loading }) => {
                   </tr>
                 </thead>
                 <tbody>
-                  {rates.map(rate => (
+                  {rates.reverse().map(rate => (
                     <tr key={rate.id}>
                       <td>{rate.month}</td>
                       <td>{rate.price}</td>
