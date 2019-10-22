@@ -23,8 +23,8 @@ const Rates = ({ rates: { rates }, getRates, loading }) => {
         <ul className="collapsible popout">
           <li>
             <div className="collapsible-header">
-              <i className="material-icons">account_balance</i>Вступительные
-              взносы
+              <i className="material-icons">account_balance_wallet</i>
+              Вступительные взносы
             </div>
             <div className="collapsible-body">
               <p>
@@ -35,12 +35,12 @@ const Rates = ({ rates: { rates }, getRates, loading }) => {
                 Кооператива в соответствии с целями его создания. (п. 5.1.1
                 Устава)
               </p>
-              <p>7 500 р.</p>
+              <p>Сумма взноса: 7 500 р.</p>
             </div>
           </li>
           <li>
             <div className="collapsible-header">
-              <i className="material-icons">account_balance</i>Членские взносы
+              <i className="material-icons">attach_money</i>Членские взносы
             </div>
             <div className="collapsible-body">
               <table>
