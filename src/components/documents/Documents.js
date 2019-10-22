@@ -7,7 +7,6 @@ import M from "materialize-css/dist/js/materialize.min";
 
 const Documents = ({ docs: { docs, loading }, getDocs }) => {
   useEffect(() => {
-    M.AutoInit();
     getDocs();
     //eslint-disable-next-line
   }, []);

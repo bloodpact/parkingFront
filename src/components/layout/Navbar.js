@@ -41,9 +41,6 @@ const Navbar = () => {
             <li>
               <NavLink to="/news">Новости</NavLink>
             </li>
-            <li>
-              <NavLink to="/meetings">О собраниях</NavLink>
-            </li>
           </ul>
         </div>
       </nav>

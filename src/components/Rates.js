@@ -1,40 +1,74 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import { getRates } from "../actions/ratesActions";
 
-const Rates = () => {
+import M from "materialize-css/dist/js/materialize.min";
+
+const Rates = ({ rates: { rates }, getRates, loading }) => {
+  useEffect(() => {
+    getRates();
+    //eslint-disable-next-line
+  }, []);
+  useEffect(() => {
+    M.AutoInit();
+  });
+  if (loading || rates === null) {
+    return <div>Loading</div>;
+  }
   return (
     <div className="section white">
       <div className="row container">
         <h1 className="header">Тарифы</h1>
-        <table className={"striped"}>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Item Name</th>
-              <th>Item Price</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr>
-              <td>Test1</td>
-              <td>Test1 name</td>
-              <td>100</td>
-            </tr>
-            <tr>
-              <td>Test2</td>
-              <td>Test2 name</td>
-              <td>3.76</td>
-            </tr>
-            <tr>
-              <td>Test3</td>
-              <td>Test3 name</td>
-              <td>$7.00</td>
-            </tr>
-          </tbody>
-        </table>
+        <ul className="collapsible popout">
+          <li>
+            <div className="collapsible-header">
+              <i className="material-icons">account_balance</i>Вступительные
+              взносы
+            </div>
+            <div className="collapsible-body">
+              <p>
+                Вступительный взнос уплачивается единоразово при вступлении в
+                кооператив. Вступительный взнос направляется на содержание
+                Кооператива, покрытие расходов, связанных с организацией приема
+                в члены Кооператива, оформление документов, ведение деятельности
+                Кооператива в соответствии с целями его создания. (п. 5.1.1
+                Устава)
+              </p>
+              <p>7 500 р.</p>
+            </div>
+          </li>
+          <li>
+            <div className="collapsible-header">
+              <i className="material-icons">account_balance</i>Членские взносы
+            </div>
+            <div className="collapsible-body">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Месяц</th>
+                    <th>Сумма</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {rates.map(rate => (
+                    <tr key={rate.id}>
+                      <td>{rate.month}</td>
+                      <td>{rate.price}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   );
 };
-
-export default Rates;
+const mapStateToProps = state => ({
+  rates: state.rates
+});
+export default connect(
+  mapStateToProps,
+  { getRates }
+)(Rates);
