@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import "materialize-css/dist/css/materialize.min.css";
+import "@fortawesome/fontawesome-free/css/fontawesome.min.css";
 import M from "materialize-css/dist/js/materialize.min";
 import Parallax from "./components/layout/Parallax";
 import Header from "./components/layout/Header";
@@ -10,8 +11,8 @@ import Documents from "./components/documents/Documents";
 import About from "./components/about/About";
 import Rates from "./components/Rates";
 import Footer from "./components/layout/Footer";
-import back1 from "./img/i1.jpg";
-import back2 from "./img/i2.jpg";
+import back1 from "./img/DSC_1.jpg";
+import back2 from "./img/DSC_201.jpg";
 import { Provider } from "react-redux";
 import store from "./store";
 import "./App.css";

@@ -39,5 +39,6 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://fierce-bastion-22580.herokuapp.com/"
+  "proxy": "https://fierce-bastion-22580.herokuapp.com/",
+  "devDependencies": {}
 }
