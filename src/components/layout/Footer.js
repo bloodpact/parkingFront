@@ -1,13 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
 const Footer = () => {
-  const [enteredName, setEnteredName] = useState("");
-  const [enteredEmail, setEnteredEmail] = useState("");
-  const [enteredFeedback, setEnteredFeedback] = useState("");
-  const sendMail = e => {
-    e.preventDefault();
-  };
-
   return (
     <footer className="page-footer  blue lighten-1">
       <div className="container">

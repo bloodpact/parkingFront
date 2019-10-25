@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import "materialize-css/dist/css/materialize.min.css";
-import "@fortawesome/fontawesome-free/css/fontawesome.min.css";
 import M from "materialize-css/dist/js/materialize.min";
 import Parallax from "./components/layout/Parallax";
 import Header from "./components/layout/Header";
