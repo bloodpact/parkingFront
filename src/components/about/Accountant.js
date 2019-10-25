@@ -1,6 +1,6 @@
 import React from "react";
 
-const Accauntant = () => {
+const Accountant = () => {
   return (
     <li>
       <div className="collapsible-header">
@@ -17,4 +17,4 @@ const Accauntant = () => {
   );
 };
 
-export default Accauntant;
+export default Accountant;
