@@ -16,7 +16,7 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/rates">Тарифы</NavLink>
+              <NavLink to="/rates">Взносы</NavLink>
             </li>
             <li>
               <NavLink to="/documents">Документы</NavLink>
