@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="row">
           <div className="col  s12">
             <h5 className="white-text">
-              Санкт-Петербург, Парашютная 61 кор. 3, оф. 1
+              Санкт-Петербург, Парашютная 61 кор. 3, лит А
             </h5>
             <p className="grey-text text-lighten-4">email: gsksh3@mail.ru</p>
             <a href="https://vk.com/gskshuvalovskiy_3">
