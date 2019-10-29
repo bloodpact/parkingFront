@@ -31,6 +31,7 @@ function App() {
           <Route exact path="/rates" component={Rates} />
           <Route exact path="/documents" component={Documents} />} />
           <Route exact path="/news" component={News} />} />
+          <Route component={News} />} />
         </Switch>
         <Parallax backImg={back2} />
         <Footer />
