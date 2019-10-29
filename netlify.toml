@@ -1,2 +1,17 @@
 [build]
     publish="build"
+    [[redirects]]
+      from = "https://www.gsk3.ru/news"
+      to = "/"
+      status = 200
+      force = true
+      [[redirects]]
+      from = "https://www.gsk3.ru/documents"
+      to = "/"
+      status = 200
+      force = true
+      [[redirects]]
+      from = "https://www.gsk3.ru/rates"
+      to = "/"
+      status = 200
+      force = true
