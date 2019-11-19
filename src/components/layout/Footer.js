@@ -1,5 +1,5 @@
 import React from "react";
-
+import userAgreement from "../documents/user.docx";
 const Footer = () => {
   return (
     <footer className="page-footer  blue lighten-1">
@@ -17,7 +17,12 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-copyright">
-        <div className="container">© 2019 ГСК3</div>
+        <div className="container">
+          <p>© 2019 ГСК3</p>
+          <a style={{ color: "white" }} href={userAgreement}>
+            Пользовательское соглашение
+          </a>
+        </div>
       </div>
     </footer>
   );

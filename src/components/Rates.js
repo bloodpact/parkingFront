@@ -19,7 +19,7 @@ const Rates = ({ rates: { rates }, getRates, loading }) => {
   return (
     <div className="section white">
       <div className="row container">
-        <h1 className="header">Тарифы</h1>
+        <h1 className="header">Взносы</h1>
         <ul className="collapsible popout">
           <li>
             <div className="collapsible-header">
