@@ -24,6 +24,9 @@ const Navbar = () => {
             <li>
               <NavLink to="/news">Новости</NavLink>
             </li>
+            <li>
+              <NavLink to="/users">Users</NavLink>
+            </li>
           </ul>
 
           <ul className="sidenav" id="mobile-demo">
