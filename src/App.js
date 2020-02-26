@@ -13,6 +13,7 @@ import Rates from "./components/Rates";
 import Footer from "./components/layout/Footer";
 import back1 from "./img/DSC_1.jpg";
 import back2 from "./img/DSC_201.jpg";
+import PasswordUpdate from "./components/users/PasswordUpdate";
 import { Provider } from "react-redux";
 import store from "./store";
 import "./App.css";
@@ -33,6 +34,8 @@ function App() {
           <Route exact path="/documents" component={Documents} />} />
           <Route exact path="/news" component={News} />} />
           <Route exact path="/users" component={Users} />} />
+          <Route exact path="/users/passupdate" component={PasswordUpdate} />}
+          />
           <Route component={News} />} />
         </Switch>
         <Parallax backImg={back2} />

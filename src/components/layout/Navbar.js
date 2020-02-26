@@ -25,7 +25,7 @@ const Navbar = () => {
               <NavLink to="/news">Новости</NavLink>
             </li>
             <li>
-              <NavLink to="/users">Users</NavLink>
+              <NavLink to="/users">Личный кабинет</NavLink>
             </li>
           </ul>
 
