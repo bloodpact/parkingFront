@@ -7,3 +7,4 @@ export const SET_LOADING = "SET_LOADING";
 export const SET_LOGGED = "SET_LOGGED";
 export const GET_RATES = "GET_RATES";
 export const GET_USER = "GET_USER";
+export const UPD_PASS = "UPD_PASS";

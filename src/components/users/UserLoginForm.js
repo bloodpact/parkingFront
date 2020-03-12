@@ -12,7 +12,7 @@ const UserLoginForm = ({ logUser }) => {
     setPassword("");
   }
   return (
-    <div className="row container" onSubmit={onSubmit}>
+    <div className="row container">
       <form className="col s12">
         <div className="row">
           <div className="input-field col s6">
