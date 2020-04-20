@@ -1,31 +1,42 @@
 import * as React from "react";
+import UserTaxData from "./UserTaxData";
+import RateList from "./RateList";
 
-export const DateItem = () => {
+export const DateItem = ({ years, months, dataTable, taxData }) => {
   return (
     <div>
-      <div className="col s12">
-        <ul className="tabs">
-          <li className="tab col s3">
-            <a className="active" href="#2019">
-              2019
-            </a>
+      <ul className="collapsible">
+        {years.map(yItem => (
+          <li key={"fullDate" + yItem}>
+            <div className="collapsible-header">
+              <i className="material-icons">date_range</i> {yItem}
+            </div>
+            <div className="collapsible-body">
+              <ul className="collapsible">
+                {taxData.map(tItem => {
+                  const filtered = dataTable.filter(
+                    el => el.date === tItem.date
+                  );
+                  // if (tItem.date.split("-")[0] === yItem) {
+                  return (
+                    <li key={tItem.date}>
+                      <div className="collapsible-header">
+                        <i className="material-icons">event</i>
+                        {tItem.date}
+                      </div>
+                      <div className="collapsible-body">
+                        <UserTaxData taxData={tItem} />
+                        <RateList dataTable={filtered} />
+                      </div>
+                    </li>
+                  );
+                  // }
+                })}
+              </ul>
+            </div>
           </li>
-        </ul>
-      </div>
-      <div id="2019" className="col s12">
-        <ul className="tabs">
-          <li className="tab col s3">
-            <a className="active" href="#jan">
-              Январь
-            </a>
-          </li>
-          <li className="tab col s3">
-            <a className="active" href="#feb">
-              Февраль
-            </a>
-          </li>
-        </ul>
-      </div>
+        ))}
+      </ul>
     </div>
   );
 };

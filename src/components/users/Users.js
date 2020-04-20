@@ -3,15 +3,19 @@ import DateItems from "./DateItems";
 import UserLoginForm from "./UserLoginForm";
 import M from "materialize-css/dist/js/materialize.min";
 import { connect } from "react-redux";
-import { logUser } from "../../actions/userActions";
+import { setLogged } from "../../actions/userActions";
 
-export const Users = ({ user: { user, logged }, logUser }) => {
+export const Users = ({ user: { user, logged }, setLogged }) => {
   useEffect(() => {
     M.AutoInit();
   });
   return (
     <div className="section white">
-      {logged ? <DateItems /> : <UserLoginForm />}
+      {logged ? (
+        <DateItems userData={user} logout={setLogged} />
+      ) : (
+        <UserLoginForm />
+      )}
     </div>
   );
 };
@@ -21,5 +25,5 @@ const mapStateToProps = state => ({
 });
 export default connect(
   mapStateToProps,
-  { logUser }
+  { setLogged }
 )(Users);

@@ -1,8 +1,8 @@
-import { GET_USER, SET_LOGGED, UPD_PASS } from "./types";
+import { GET_USER, SET_LOGGED, UPD_PASS, SET_ERROR } from "./types";
 import axios from "axios";
 export const logUser = data => async dispatch => {
-  setLogged();
   try {
+    setLogged();
     const request = await axios.post("http://localhost:5000/users/login", data);
     const response = await request;
     dispatch({
@@ -10,7 +10,10 @@ export const logUser = data => async dispatch => {
       payload: response.data
     });
   } catch (e) {
-    console.log(e);
+    dispatch({
+      type: SET_ERROR,
+      payload: e.response.data.msg
+    });
   }
 };
 export const updPass = data => async dispatch => {
@@ -21,7 +24,6 @@ export const updPass = data => async dispatch => {
       data
     );
     const response = await request;
-    console.log(response);
     dispatch({
       type: UPD_PASS,
       payload: response.data

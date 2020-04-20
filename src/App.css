@@ -40,3 +40,8 @@
 .header{
   font-size: 1.92rem;
 }
+
+.dataTable{
+  display: flex;
+  justify-content: space-around;
+}

@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import { logUser } from "../../actions/userActions";
 import { connect } from "react-redux";
 
-const UserLoginForm = ({ logUser }) => {
-  // const onChange = e => setUser({ ...user, [e.target.name]: e.target.value });
+const UserLoginForm = ({ user: { error }, logUser }) => {
   const [number, setNumber] = useState("");
   const [password, setPassword] = useState("");
-  function onSubmit() {
+
+  function onSubmit(e) {
+    e.preventDefault();
     logUser({ number, password });
     setNumber("");
     setPassword("");
@@ -18,6 +19,7 @@ const UserLoginForm = ({ logUser }) => {
           <div className="input-field col s6">
             <input
               onChange={e => setNumber(e.target.value)}
+              required
               id="number"
               type="text"
               name={"number"}
@@ -32,12 +34,14 @@ const UserLoginForm = ({ logUser }) => {
             <input
               onChange={e => setPassword(e.target.value)}
               id="password"
+              required
               name={"password"}
               type="password"
               value={password}
               className="validate"
             />
             <label htmlFor="password">Пароль</label>
+            {error ? <p>{error}</p> : <p></p>}
           </div>
         </div>
         <a
@@ -45,17 +49,17 @@ const UserLoginForm = ({ logUser }) => {
           className="waves-effect waves-light btn"
           onClick={onSubmit}
         >
-          ОТПРАВИТЬ
+          ЗАЙТИ В ЛИЧНЫЙ КАБИНЕТ
         </a>
       </form>
     </div>
   );
 };
-// const mapStateToProps = state => ({
-//   logged: state.logged,
-//   user: state.user
-// });
+const mapStateToProps = state => ({
+  user: state.user,
+  error: state.error
+});
 export default connect(
-  null,
+  mapStateToProps,
   { logUser }
 )(UserLoginForm);

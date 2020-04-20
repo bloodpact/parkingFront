@@ -1,26 +1,30 @@
-import {GET_USER, SET_LOGGED, UPD_PASS} from "../actions/types";
+import { GET_USER, SET_LOGGED, UPD_PASS, SET_ERROR } from "../actions/types";
 
 const initialState = {
   logged: false,
-  user: null
+  user: null,
+  error: null
 };
 export default (state = initialState, action) => {
   switch (action.type) {
     case SET_LOGGED:
-      // console.log(action.payload);
       return {
         ...state,
-        logged: false
+        logged: false,
+        error: null
       };
     case GET_USER:
-      // console.log(action.payload);
       return {
         ...state,
         user: action.payload,
         logged: true
       };
+    case SET_ERROR:
+      return {
+        ...state,
+        error: action.payload
+      };
     case UPD_PASS:
-      // console.log(action.payload);
       return {
         ...state,
         user: action.payload,

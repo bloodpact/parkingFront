@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { updPass } from "../../actions/userActions";
+import M from "materialize-css/dist/js/materialize.min";
 
 export function PasswordUpdate({ user: { user, logged }, updPass, history }) {
   const [id, setId] = useState("");
@@ -18,6 +19,7 @@ export function PasswordUpdate({ user: { user, logged }, updPass, history }) {
     console.log(id);
     setId("");
     setPassword("");
+    M.toast({ html: `Пароль обновлен` });
     history.push("/users");
   }
   return (

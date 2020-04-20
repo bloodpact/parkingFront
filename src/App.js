@@ -17,6 +17,7 @@ import PasswordUpdate from "./components/users/PasswordUpdate";
 import { Provider } from "react-redux";
 import store from "./store";
 import "./App.css";
+import "./styles.css";
 
 function App() {
   useEffect(() => {
