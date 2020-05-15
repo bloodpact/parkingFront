@@ -8,5 +8,6 @@ export const SET_LOGGED = "SET_LOGGED";
 export const GET_RATES = "GET_RATES";
 export const GET_USER = "GET_USER";
 export const UPD_PASS = "UPD_PASS";
+export const UPD_EMAIL = "UPD_EMAIL";
 export const SET_ERROR = "SET_ERROR";
 export const GET_DATA_TABLE = "GET_DATA_TABLE";

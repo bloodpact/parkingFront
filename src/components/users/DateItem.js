@@ -2,7 +2,7 @@ import * as React from "react";
 import UserTaxData from "./UserTaxData";
 import RateList from "./RateList";
 
-export const DateItem = ({ years, months, dataTable, taxData }) => {
+export const DateItem = ({ years, dataTable, taxData }) => {
   return (
     <div>
       <ul className="collapsible">

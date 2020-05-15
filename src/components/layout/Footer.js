@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 import userAgreement from "../documents/user.docx";
 const Footer = () => {
   return (
@@ -18,10 +19,11 @@ const Footer = () => {
       </div>
       <div className="footer-copyright">
         <div className="container">
-          <p>© 2019 ГСК3</p>
+          <p>© {moment(Date.now()).format("YYYY")} ГСК3</p>
           <a style={{ color: "white" }} href={userAgreement}>
             Пользовательское соглашение
           </a>
+          <p>По вопросам работы сайта обращаться gsksh3@mail.ru</p>
         </div>
       </div>
     </footer>

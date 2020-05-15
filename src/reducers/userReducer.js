@@ -1,4 +1,10 @@
-import { GET_USER, SET_LOGGED, UPD_PASS, SET_ERROR } from "../actions/types";
+import {
+  GET_USER,
+  SET_LOGGED,
+  UPD_PASS,
+  UPD_EMAIL,
+  SET_ERROR
+} from "../actions/types";
 
 const initialState = {
   logged: false,
@@ -25,6 +31,12 @@ export default (state = initialState, action) => {
         error: action.payload
       };
     case UPD_PASS:
+      return {
+        ...state,
+        // user: action.payload,
+        logged: true
+      };
+    case UPD_EMAIL:
       return {
         ...state,
         user: action.payload,

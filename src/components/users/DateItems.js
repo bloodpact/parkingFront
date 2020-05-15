@@ -5,6 +5,7 @@ import Preloader from "../layout/Preloader";
 import M from "materialize-css/dist/js/materialize.min";
 import DateItem from "./DateItem";
 import { NavLink } from "react-router-dom";
+import { askAct } from "../../actions/userActions";
 import * as _ from "lodash";
 
 export const DateItems = ({
@@ -20,6 +21,17 @@ export const DateItems = ({
     getTableData();
     //eslint-disable-next-line
   }, []);
+
+  const clickHandler = () => {
+    if (userData.email) {
+      askAct({ place: userData.number, email: userData.email });
+      M.toast({
+        html: `Запрос отправлен, ответ будет отправлен на ${userData.email}`
+      });
+    } else {
+      M.toast({ html: `Email не обнаружен, обновите данные` });
+    }
+  };
   const getPartOfDate = (array, placeInArr) => {
     return _.uniq(
       array.map(el => {
@@ -32,15 +44,23 @@ export const DateItems = ({
     return <Preloader />;
   }
   const years = getPartOfDate(dataTable, 0);
-  const months = getPartOfDate(dataTable, 1);
   return (
     <div className="row container">
-      <NavLink to="/users/passupdate" activeClassName="active">
-        Обновить пароль
+      <NavLink
+        className="waves-effect waves-light btn"
+        to="/users/passupdate"
+        activeClassName="active"
+      >
+        Обновить пароль/email
       </NavLink>
+      <button
+        onClick={clickHandler}
+        className="ml1 waves-effect waves-light btn"
+      >
+        Запросить акт сверки
+      </button>
       <DateItem
         years={years}
-        months={months}
         dataTable={dataTable}
         taxData={userData.taxData}
       />
