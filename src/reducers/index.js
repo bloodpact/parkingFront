@@ -2,8 +2,12 @@ import { combineReducers } from "redux";
 import newsReducer from "./newsReducer";
 import docReducer from "./docReducer";
 import ratesReducer from "./ratesReducer";
+import userReducer from "./userReducer";
+import dataTableReducer from "./dataTableReducer";
 export default combineReducers({
   news: newsReducer,
   docs: docReducer,
-  rates: ratesReducer
+  user: userReducer,
+  rates: ratesReducer,
+  dataTable: dataTableReducer
 });

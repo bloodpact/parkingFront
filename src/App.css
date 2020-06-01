@@ -40,3 +40,11 @@
 .header{
   font-size: 1.92rem;
 }
+
+.dataTable{
+  display: flex;
+  justify-content: space-around;
+}
+.ml1{
+  margin-left: 2px;
+}

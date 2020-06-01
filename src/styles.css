@@ -1,0 +1,21 @@
+.dataTable{
+    display: flex;
+    justify-content: space-between;
+}
+.dataTable span:first-child{
+    width: 30%;
+    word-wrap: break-word;
+}
+.infoName{
+    width: 30%;
+}
+@media only screen and (min-width: 300px) and (max-width: 600px)
+{html
+    {
+    font-size: 12px;
+    }
+td
+    {
+    padding: 15px 0;
+    font-size: 0.869rem}
+}

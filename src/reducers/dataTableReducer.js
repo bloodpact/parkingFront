@@ -1,13 +1,13 @@
-import { GET_DOCS, DOCS_ERROR, SET_LOADING } from "../actions/types";
+import { DOCS_ERROR, GET_DATA_TABLE, SET_LOADING } from "../actions/types";
 const initialState = {
-  docs: null,
+  dataTable: null,
   loading: false,
   error: null
 };
 export default (state = initialState, action) => {
   switch (action.type) {
-    case GET_DOCS:
-      return { ...state, docs: action.payload, loading: false };
+    case GET_DATA_TABLE:
+      return { ...state, dataTable: action.payload, loading: false };
     case DOCS_ERROR:
       return {
         ...state,

@@ -24,6 +24,9 @@ const Navbar = () => {
             <li>
               <NavLink to="/news">Новости</NavLink>
             </li>
+            <li>
+              <NavLink to="/users">Личный кабинет</NavLink>
+            </li>
           </ul>
 
           <ul className="sidenav" id="mobile-demo">
@@ -40,6 +43,9 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink to="/news">Новости</NavLink>
+            </li>
+            <li>
+              <NavLink to="/users">Личный кабинет</NavLink>
             </li>
           </ul>
         </div>
