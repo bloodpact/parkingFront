@@ -5,10 +5,15 @@ import { connect } from "react-redux";
 const UserLoginForm = ({ user: { error }, logUser }) => {
   const [number, setNumber] = useState("");
   const [password, setPassword] = useState("");
+  // const [error, setError] = useState(error);
 
   function onSubmit(e) {
     e.preventDefault();
     logUser({ number, password });
+
+    // if (error == undefined) {
+    //   setError("ошибка сервера");
+    // }
     setNumber("");
     setPassword("");
   }

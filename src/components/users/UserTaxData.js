@@ -24,7 +24,7 @@ export const UserTaxData = ({ taxData, dataTable }) => {
         <thead>
           <tr>
             <th>Владелец</th>
-            <th>Задолженность</th>
+            <th>Задолженность на конец месяца</th>
           </tr>
         </thead>
         <tbody>

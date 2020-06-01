@@ -3,22 +3,32 @@ import axios from "axios";
 export const logUser = data => async dispatch => {
   try {
     setLogged();
-    const request = await axios.post("http://localhost:5000/users/login", data);
+    const request = await axios.post(
+      "https://fierce-bastion-22580.herokuapp.com/users/login",
+      data
+    );
     const response = await request;
     dispatch({
       type: GET_USER,
       payload: response.data
     });
   } catch (e) {
-    dispatch({
-      type: SET_ERROR,
-      payload: e.response.data.msg
-    });
+    if (e.response === undefined) {
+      dispatch({
+        type: SET_ERROR,
+        payload: "Ошибка сервера"
+      });
+    } else {
+      dispatch({
+        type: SET_ERROR,
+        payload: e.response.data.msg
+      });
+    }
   }
 };
 export const askAct = async data => {
   try {
-    await axios.post("http://localhost:5000/email/", data);
+    await axios.post("https://fierce-bastion-22580.herokuapp.com/email/", data);
   } catch (e) {
     console.log(e);
   }
